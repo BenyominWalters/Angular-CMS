@@ -1,0 +1,11 @@
+<h2>List of Users</h2>
+<p>hi!</p>
+<div *ngIf="users">
+  <ul class="users">
+    <li *ngFor="let user of users.users">
+      <a [routerLink]="['/detail', user._id]">
+        <span class="badge">{{user.id}}</span> {{user.username}}
+      </a>
+    </li>
+  </ul>
+</div>
