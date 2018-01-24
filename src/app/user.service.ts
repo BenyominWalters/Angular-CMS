@@ -6,6 +6,10 @@ import { of } from 'rxjs/observable/of';
 
 import { User } from './user';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'applicatoin/json'})
+};
+
 @Injectable()
 export class UserService {
 
@@ -16,11 +20,16 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   //Set up a simple observable.
-  getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.url);
+  getUsers(): Observable<User> {
+    return this.http.get<User>(this.url);
   }
   getUser(id: string): Observable<User> {
     return this.http.get<User>(this.url + `/view/${id}`);
+  }
+
+  //Save changes to user on server, by POST
+  updateUser (user: User): Observable<any> {
+    return this.http.post(this.url, user, httpOptions)
   }
 
 }

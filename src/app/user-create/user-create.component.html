@@ -1,0 +1,43 @@
+<div class="container">
+    <h1>Create User Form</h1>
+    <form #userForm="ngForm">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" required
+                [(ngModel)]="model.username" name="username">
+                TODO: remove this: {{model.username}}
+
+      </div>
+
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName" required
+                [(ngModel)]="model.firstname" name="firstName">
+                TODO: remove this: {{model.firstname}}
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName" required
+                [(ngModel)]="model.lastname" name="lastName">
+                TODO: remove this: {{model.lastname}}
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email" required
+                [(ngModel)]="model.email" name="email">
+                TODO: remove this: {{model.email}}
+      </div>
+
+      <div class="form-group">
+        <label for="admin">Admin</label>
+        <select class="form-control" id="admin" required>
+          <option *ngFor="let i of admin" [value]="i">{{i}}</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-success">Create</button>
+
+    </form>
+</div>

@@ -9,7 +9,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  users: User[];
+  users: User;
 
   constructor(private userService: UserService) { }
 
@@ -25,5 +25,4 @@ export class UsersComponent implements OnInit {
         }
     );
   }
-
 }
