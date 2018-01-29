@@ -1,5 +1,6 @@
+<div *ngIf="user">
 <div class="container">
-    <h1>Create User Form</h1>
+    <h1>Edit User Form</h1>
 <div [hidden]="submitted">
     <form (ngSubmit)="newUser()" #userForm="ngForm">
       <div class="form-group">
@@ -17,9 +18,9 @@
 
       <div class="form-group">
         <label for="firstName">First Name</label>
-        <input type="text" class="form-control" id="firstName"
+        <input type="text" class="form-control" id="first_name"
                 required
-                [(ngModel)]="user.firstname" name="firstName"
+                [(ngModel)]="user.first_name" name="first_name"
                 #firstName="ngModel">
         <div [hidden]="firstName.valid || firstName.pristine"
               class="alert alert-danger">
@@ -30,9 +31,9 @@
 
       <div class="form-group">
         <label for="lastName">Last Name</label>
-        <input type="text" class="form-control" id="lastName"
+        <input type="text" class="form-control" id="last_name"
                 required
-                [(ngModel)]="user.lastname" name="lastName"
+                [(ngModel)]="user.last_name" name="last_name"
                 #lastName="ngModel">
         <div [hidden]="lastName.valid || lastName.pristine"
               class="alert alert-danger">
@@ -62,14 +63,14 @@
       </div>
 
       <button type="submit" class="btn btn-success"
-      [disabled]="!userForm.form.valid">Create</button>
+      [disabled]="!userForm.form.valid">Edit</button>
     </form>
   </div>
 
   <div [hidden]="!submitted">
-    <h2>Your user was created!</h2>
+    <h2>Your user was edited!</h2>
     <div *ngIf="errorMessage" class="alert error">{{errorMessage}}</div>
-    <button class="btn btn-primary" (click)="submitted=false">Change</button>
+    <button class="btn btn-primary" (click)="submitted=false">Go Back</button>
   </div>
-
+</div>
 </div>

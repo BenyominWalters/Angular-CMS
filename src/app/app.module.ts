@@ -11,6 +11,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserService } from './user.service';
 import { AppRoutingModule } from './/app-routing.module';
 import { UserCreateComponent } from './user-create/user-create.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 
 
@@ -26,7 +27,8 @@ import { UserCreateComponent } from './user-create/user-create.component';
     UsersComponent,
     UserDetailComponent,
     DashboardComponent,
-    UserCreateComponent
+    UserCreateComponent,
+    UserEditComponent
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

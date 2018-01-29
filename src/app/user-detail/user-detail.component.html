@@ -9,12 +9,6 @@
   <div><span>Admin: </span>{{user.user.admin}}</div>
 
   <br/>
-
-  <div>
-      <label>Username:
-        <input [(ngModel)]="user.user.username" placeholder="username">
-      </label>
-  </div>
   <button (click)="goBack()">go back</button>
-  <button (click)="save()">save</button>
+  <button [routerLink]="['/user/edit', user.user._id]">edit</button>
 </div>

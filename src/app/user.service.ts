@@ -7,7 +7,7 @@ import { of } from 'rxjs/observable/of';
 import { User } from './user';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'applicatoin/json'})
+  headers: new HttpHeaders({ 'Content-Type': 'application/json'})
 };
 
 @Injectable()
@@ -28,8 +28,14 @@ export class UserService {
   }
 
   //Save changes to user on server, by POST
-  updateUser (user: User): Observable<any> {
+  editUser (user: User): Observable<any> {
     return this.http.post(this.url, user, httpOptions)
   }
+
+  //Create new user on server, by POST
+  createUser (user: User): Observable<User> {
+  console.log(user);
+  return this.http.post<User>(this.url+ '/create',user, httpOptions)
+}
 
 }

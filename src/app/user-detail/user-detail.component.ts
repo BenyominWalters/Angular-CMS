@@ -21,7 +21,6 @@ export class UserDetailComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    console.log(id)
     this.getUser(id);
   }
 
@@ -31,11 +30,6 @@ export class UserDetailComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
-  }
-
-  save(): void {
-    this.userService.updateUser(this.user)
-    .subscribe(() => this.goBack());
   }
 
 }
